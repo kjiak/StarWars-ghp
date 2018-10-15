@@ -9,7 +9,7 @@ import { Person } from './interface';
 })
 export class AppComponent implements OnInit {
   title = 'StarWars';
-  people: Array<Person>;
+  people: Person[];
   constructor(private  apiService:  ApiService) {
   }
 
