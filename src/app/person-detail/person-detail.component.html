@@ -1,0 +1,21 @@
+<mat-card *ngFor="let person of persondetail">
+    <mat-card-header>
+    <mat-card-title style="margin-left:-8px;">
+     Name: {{person.name}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+     Height: {{person.height}}
+    </mat-card-content>
+    <mat-card-content>
+     Mass: {{person.mass}}
+    </mat-card-content>
+    <mat-card-content>
+     Birth Year: {{person.birth_year}}
+    </mat-card-content>
+    <!-- <mat-card-content>
+     Films: {{person.films}}
+    </mat-card-content> -->
+    <mat-card-actions>
+      <a  mat-raised-button  href="{{person.url}}"  color="primary">More</a>
+    </mat-card-actions>
+    </mat-card>
