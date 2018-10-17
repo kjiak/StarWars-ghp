@@ -14,7 +14,7 @@ import { PersonDetailComponent } from './person-detail/person-detail.component';
 @NgModule({
   declarations: [
     AppComponent,
-    PersonDetailComponent
+    PersonDetailComponent,
   ],
   imports: [
     BrowserModule,
