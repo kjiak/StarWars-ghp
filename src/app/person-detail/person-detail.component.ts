@@ -8,6 +8,7 @@ import { Person } from '../interface';
 })
 export class PersonDetailComponent implements OnInit {
 
+  title = 'StarWars';
   @Input() persondetail: Person[];
 
   constructor() { }

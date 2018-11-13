@@ -1,8 +1,19 @@
-<mat-card *ngFor="let person of persondetail">
+<mat-card class="sample-card" *ngFor="let person of persondetail">
     <mat-card-header>
     <mat-card-title style="margin-left:-0.7vw; font-size: 1.5rem">
-     {{person.name}}</mat-card-title>
+     {{title}} 
+    </mat-card-title>
     </mat-card-header>
+    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    <mat-card-content style="margin-left:-0.7vw; font-size: 1.5rem">
+    {{person.name}}
+    </mat-card-content>
+    <mat-card-content>
+     Birth Year: {{person.birth_year}}
+    </mat-card-content>
+    <mat-card-content>
+     Species: {{person.species}}
+    </mat-card-content>
     <mat-card-content>
      Height: {{person.height}}
     </mat-card-content>
@@ -10,12 +21,19 @@
      Mass: {{person.mass}}
     </mat-card-content>
     <mat-card-content>
-     Birth Year: {{person.birth_year}}
+     Gender: {{person.gender}}
     </mat-card-content>
-    <!-- <mat-card-content>
-     Films: {{person.films}}
-    </mat-card-content> -->
+    <mat-card-content>
+     Hair Color: {{person.hair_color}}
+    </mat-card-content>
+    <mat-card-content>
+     Skin Color: {{person.skin_color}}
+    </mat-card-content>
+    <mat-card-content>
+     Skin Color: {{person.homeworld}}
+    </mat-card-content>
     <mat-card-actions>
-      <a  mat-raised-button  href="{{person.url}}"  color="primary">More</a>
+      <button mat-button>SHARE</button>
+      <!-- <a  mat-raised-button  href="{{person.url}}"  color="primary">More</a> -->
     </mat-card-actions>
-    </mat-card>
+  </mat-card>
