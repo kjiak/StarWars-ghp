@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Person } from '../interface';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-person-detail',
@@ -11,9 +12,10 @@ export class PersonDetailComponent implements OnInit {
   title = 'StarWars';
   @Input() persondetail: Person[];
 
-  constructor() { }
+  constructor(private  apiService:  ApiService) { }
 
   ngOnInit() {
+    this.apiService.getPeople().subscribe(data => this.persondetail = data);
   }
 
 }
