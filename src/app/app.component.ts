@@ -14,6 +14,6 @@ export class AppComponent implements OnInit {
   }
 
 ngOnInit() {
-  this.apiService.fetch().subscribe(data => this.people = data);
+  this.apiService.getPeople().subscribe(data => this.people = data);
 }
 }

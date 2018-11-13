@@ -11,8 +11,10 @@ import { Person } from './interface';
 export class ApiService {
   private  dataURL = 'https://swapi.co/api/people/';
   constructor(private  httpClient:  HttpClient) {}
-  fetch():  Observable<Person[]> {
+
+  getPeople():  Observable<Person[]> {
   return <Observable<Person[]> >this.httpClient.get(this.dataURL)
   .pipe(map(data => data['results']));
 }
+
 }
