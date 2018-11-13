@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Person } from '../interface';
+import { Person } from '../person';
 import { ApiService } from '../api.service';
 
 @Component({
