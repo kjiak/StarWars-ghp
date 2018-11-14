@@ -15,7 +15,7 @@ export class PersonDetailComponent implements OnInit {
   constructor(private  apiService:  ApiService) { }
 
   ngOnInit() {
-    this.apiService.getPeople().subscribe(data => this.persondetail = data);
+    this.apiService.getPeople().then(data => this.persondetail = data);
   }
 
 }
