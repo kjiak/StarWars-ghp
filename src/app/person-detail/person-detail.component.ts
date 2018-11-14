@@ -10,7 +10,7 @@ import { ApiService } from '../api.service';
 export class PersonDetailComponent implements OnInit {
 
   title = 'StarWars';
-  @Input() persondetail: Person[];
+  persondetail: Person[];
 
   constructor(private  apiService:  ApiService) { }
 

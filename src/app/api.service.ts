@@ -7,12 +7,12 @@ import { Person } from './person';
 })
 
 export class ApiService {
-  private  peopleURL = 'https://swapi.co/api/people/';
+  private peopleURL = 'https://swapi.co/api/people/?page=1';
   constructor(private  httpClient:  HttpClient) {}
 
-  getPeople():  Promise<Person[]> {
-  return <Promise<Person[]> >this.httpClient.get(this.peopleURL)
-  .toPromise()
-  .then(response => response['results']);
-}
+  getPeople(): Promise<Person[]> {
+    return <Promise<Person[]>>this.httpClient.get(this.peopleURL)
+    .toPromise()
+    .then(response => response['results']);
+  }
 }
