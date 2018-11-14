@@ -13,6 +13,6 @@ export class ApiService {
   getPeople(): Promise<Person[]> {
     return <Promise<Person[]>>this.httpClient.get(this.peopleURL)
     .toPromise()
-    .then(response => response['results']);
+    .then(response => response['results'].map(result => Person.parse(result)));
   }
 }

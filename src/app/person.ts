@@ -16,11 +16,11 @@ export class Person {
     edited: string;
     url: string;
 
-    // static parse(data) {
-    //     const person = Object.assign(new Person(), data);
-    //     person.getHomeWorldId();
-    //     return person;
-    //   }
+    static parse(data) {
+        const person = Object.assign(new Person(), data);
+        person.getId();
+        return person;
+      }
 
     // getHomeWorldId() {
     //     if (this.homeworld) {
@@ -29,8 +29,15 @@ export class Person {
     //     }
     //   }
 
+    getId() {
+        if (this.url) {
+          const temp = this.url.match('([0-9]+)\/$');
+          this.url = temp[1];
+        }
+      }
+
     //   getImageUrl() {
-    //     this.imageURL = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + this.id + ".png";
+    //     this.imageURL = "https://starwars-visualguide.com/assets/img/characters/" + this.id + ".jpg";
     //   }
 }
 
