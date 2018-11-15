@@ -5,7 +5,7 @@ import { Person } from './person';
 @Injectable({
   providedIn: 'root'
 })
-
+// this is the service where the magic happens
 export class ApiService {
   private peopleURL = 'https://swapi.co/api/people/?page=1';
   constructor(private  httpClient:  HttpClient) {}

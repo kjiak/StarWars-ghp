@@ -5,7 +5,7 @@
     </mat-card-title>
     </mat-card-header>
     <mat-card-content>
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    <img mat-card-image src="{{person.imageURL}}" alt="Photo of a Shiba Inu">
     </mat-card-content>
     <mat-card-content>
     {{person.name}} <br>
@@ -17,7 +17,6 @@
      Hair Color: {{person.hair_color}} <br>
      Skin Color: {{person.skin_color}} <br>
      Homeworld: {{person.homeworld}} <br>
-     URL: {{person.url}} <br>
      Comments: to insert textbox here <br>
     <mat-card-actions>
       <button mat-button>SHARE</button>

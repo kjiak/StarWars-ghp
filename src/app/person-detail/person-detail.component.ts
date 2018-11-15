@@ -9,6 +9,7 @@ import { ApiService } from '../api.service';
 })
 export class PersonDetailComponent implements OnInit {
 
+  // inside the controller, you call the service(eg this.species = species[0])
   title = 'StarWars';
   persondetail: Person[];
 
