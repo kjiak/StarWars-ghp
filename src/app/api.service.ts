@@ -12,15 +12,16 @@ export class ApiService {
   constructor(private  httpClient:  HttpClient) {}
 
   getPeople(): any {
-    const all = [];
+    const allpeople = [];
     for (let i = 1; i < 89; i++) {
     if (i === 17) { continue; }
     const p = <Promise<Person>>this.httpClient.get(this.peopleURL + i + '/')
     .toPromise()
-    .then(response => Person.parse(response)).catch(err => console.log(err));
-    all.push(p);
+    .then(response => Person.parse(response))
+    .catch(err => console.log(err));
+    allpeople.push(p);
     }
-    console.log(all);
-    return Promise.all(all);
+    console.log(allpeople);
+    return Promise.all(allpeople);
   }
 }
