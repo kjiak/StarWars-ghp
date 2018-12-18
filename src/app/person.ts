@@ -29,14 +29,20 @@ export class Person {
     getHomeWorldId() {
         if (this.homeworld) {
           const temp = this.homeworld.match('([0-9]+)\/$');
+          // match from the back
           this.homeworld = temp[1];
         }
       }
 
       getSpeciesId() {
         if (this.species) {
+          // array of string instead of string
           const temp = this.species.map(x => x.match('([0-9]+)\/$'));
           this.species = temp.map(x => x[1]);
+          // force empty array to show as 'unknown'
+          if (!this.species.length) {
+          this.species.push('unknown');
+          }
         }
       }
 
@@ -54,5 +60,18 @@ export class Person {
 
 export class Planet {
     name:  string;
+    diameter: string;
+    rotation_period: string;
+    orbital_period: string;
+    climate: string;
+    gravity: string;
+    terrain: string;
+    surface_water: string;
+    population: string;
+    residents: string[];
+    films: string[];
+    url: string;
+    created: string;
+    edited: string;
 }
 
