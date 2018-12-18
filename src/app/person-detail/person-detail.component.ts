@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Person } from '../person';
+import { Person, Planet, Species } from '../classes';
 import { ApiService } from '../api.service';
 
 @Component({
@@ -11,12 +11,23 @@ export class PersonDetailComponent implements OnInit {
 
   // inside the controller, you call the service(eg this.species = species[0])
   title = 'StarWars';
-  persondetail: Person[];
+  // persondetail: Person[];
+  person: Person;
+  homeworld: Planet;
+  species: Species;
 
-  constructor(private  apiService:  ApiService) { }
+  constructor(private  apiService:  ApiService) {
+  }
 
   ngOnInit() {
-    this.apiService.getPeople().then(data => this.persondetail = data);
+    // this.apiService.getPeople().then(data => this.persondetail = data);
+
+
+    // solo
+    this.apiService.getPerson(1).then(data => { this.person = data; console.log(this.person);
+    this.apiService.getPlanetname(this.person.homeworld).then(res => {this.homeworld = res; console.log(this.homeworld); });
+    this.apiService.getSpeciesname(this.person.species).then(res => {this.species = res; console.log(this.species); });
+    });
   }
 
 }

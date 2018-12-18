@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Person } from './person';
-import { Planet } from './person';
+import { Person } from './classes';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +10,7 @@ import { Planet } from './person';
 export class ApiService {
   private peopleURL = 'https://swapi.co/api/people/';
   private planetURL = 'https://swapi.co/api/planets/';
+  private speciesURL = 'https://swapi.co/api/species/';
   constructor(private  httpClient:  HttpClient) {}
 
   getPeople(): any {
@@ -27,8 +27,22 @@ export class ApiService {
     return Promise.all(allpeople);
   }
 
-  getPlanet(planetid): any {
-    this.httpClient.get(this.planetURL + planetid + '/')
+  getPerson(personid): any {
+    return this.httpClient.get(this.peopleURL + personid + '/')
+    .toPromise()
+    .then(response => Person.parse(response))
+    .catch(err => console.log(err));
+    }
+
+  getPlanetname(planetid): any {
+    return this.httpClient.get(this.planetURL + planetid + '/')
+    .toPromise()
+    .then(response => response['name'])
+    .catch(err => console.log(err));
+    }
+
+  getSpeciesname(speciesid): any {
+    return this.httpClient.get(this.speciesURL + speciesid + '/')
     .toPromise()
     .then(response => response['name'])
     .catch(err => console.log(err));
