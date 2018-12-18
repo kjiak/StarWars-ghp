@@ -1,11 +1,11 @@
 <!-- <mat-card class="sample-card" *ngFor="let person of persondetail"> -->
 <mat-card class="sample-card" *ngIf="person && homeworld && species">
     <mat-card-header>
-    <mat-card-title>{{title}}</mat-card-title>
-    <button mat-icon-button class="end"><mat-icon>arrow_back_ios</mat-icon></button>
+    <!-- <mat-card-title></mat-card-title> -->
+    <!-- <mat-form-field></mat-form-field> -->
+    <img mat-card-image src="{{person.imageURL}}" alt="Photo of a Character">
     </mat-card-header>
     <mat-card-content>
-    <img mat-card-image src="{{person.imageURL}}" alt="Photo of a Character">
     <mat-card-content>
     {{person.name}} <br>
      Birth Year: {{person.birth_year}} <br>
