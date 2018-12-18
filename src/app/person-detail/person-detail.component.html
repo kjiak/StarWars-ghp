@@ -1,9 +1,8 @@
 <!-- <mat-card class="sample-card" *ngFor="let person of persondetail"> -->
 <mat-card class="sample-card" *ngIf="person && homeworld && species">
     <mat-card-header>
-    <mat-card-title>
-     {{title}} 
-    </mat-card-title>
+    <mat-card-title>{{title}}</mat-card-title>
+    <button mat-icon-button class="end"><mat-icon>arrow_back_ios</mat-icon></button>
     </mat-card-header>
     <mat-card-content>
     <img mat-card-image src="{{person.imageURL}}" alt="Photo of a Character">
@@ -19,7 +18,7 @@
      Homeworld: {{homeworld}} <br>
      Comments: to insert textbox here <br>
     <mat-card-actions>
-      <button mat-button>SHARE</button>
+      <button mat-button><mat-icon>share</mat-icon>Share</button>
       <!-- <a  mat-raised-button  href="{{person.url}}"  color="primary">More</a> -->
     </mat-card-actions>
   </mat-card-content>

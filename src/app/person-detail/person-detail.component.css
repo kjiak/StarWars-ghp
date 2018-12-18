@@ -2,18 +2,16 @@
     max-width: 400px;
     background-color:#fafafa;
   }
-
   .mat-card-header{
     background-color:#1976d2 !important;
     padding:5px !important;
     justify-content: center;
     border: solid;
   }
-
   .mat-card-title{
     font-size: 1.5rem;
+    margin-left: 130%;
   }
-
   .mat-card img{
     object-fit: cover; 
     width: 100%; 
@@ -28,7 +26,6 @@
     padding:20px !important;
     border: solid;
   }
-  .mat-card-content{
-    padding:20px !important;
-    border: solid;
-  }
+  .end{
+    margin-left: auto;
+ }
