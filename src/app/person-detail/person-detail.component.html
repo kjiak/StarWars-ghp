@@ -1,10 +1,10 @@
 <!-- <mat-card class="sample-card" *ngFor="let person of persondetail"> -->
 <mat-card class="sample-card" *ngIf="person && homeworld && species">
     <mat-card-header>
+    <img mat-card-image src="{{person.imageURL}}" alt="Photo of a Character">  
     <!-- <mat-card-title></mat-card-title> -->
-    <!-- <mat-form-field></mat-form-field> -->
-    <img mat-card-image src="{{person.imageURL}}" alt="Photo of a Character">
     </mat-card-header>
+    <mat-divider></mat-divider>
     <mat-card-content>
     <mat-card-content>
     {{person.name}} <br>
@@ -16,10 +16,15 @@
      Hair Color: {{person.hair_color}} <br>
      Skin Color: {{person.skin_color}} <br>
      Homeworld: {{homeworld}} <br>
-     Comments: to insert textbox here <br>
+    </mat-card-content> 
+    <mat-divider></mat-divider>
+    <mat-card-content>
+    <mat-form-field>
+    <input matInput placeholder="Comments">
+    </mat-form-field>
     <mat-card-actions>
-      <button mat-button><mat-icon>share</mat-icon>Share</button>
-      <!-- <a  mat-raised-button  href="{{person.url}}"  color="primary">More</a> -->
+        <button mat-button><mat-icon>share</mat-icon>Share</button>
+        <!-- <a  mat-raised-button  href="{{person.url}}"  color="primary">More</a> -->
     </mat-card-actions>
   </mat-card-content>
   </mat-card-content>

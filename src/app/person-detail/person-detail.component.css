@@ -1,10 +1,14 @@
 .sample-card {
   max-width: 400px;
 }
+
+.small-card{
+  border: solid;
+}
 .mat-card-header{
     background-color:#fafafa !important;
-    padding:5px !important;
     justify-content: center;
+    padding: 10px !important;
   } 
   /* .mat-card-title{
     font-size: 1.5rem;
@@ -12,17 +16,19 @@
   } */
 
   .mat-card img{
-    object-fit: cover; 
+    object-fit: cover;
     width: 80%; 
-    height: 80%;
+    height: 80%; 
+    max-width: 300px;
+    max-height: 300px;
     padding: 0px !important;
-  }
+  } 
+
   .mat-card{
     padding:0 !important;
   }
   
   .mat-card-content{
     padding:20px !important;
-    border: solid;
   }
  
