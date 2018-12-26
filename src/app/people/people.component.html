@@ -1,0 +1,9 @@
+<mat-card class="sample-card" *ngFor="let person of people">
+    <mat-card-content>
+        <mat-card-content class="small-card">
+      <a routerLink="/people/{{person.url}}">
+    {{person.url}}. {{person.name}} <br>
+      </a>
+      </mat-card-content>
+    </mat-card-content> 
+</mat-card>

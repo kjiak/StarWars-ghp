@@ -4,9 +4,10 @@
   margin-right: auto;
 }
 
-.small-card{
+.small-card {
   border: solid;
 }
+
 .mat-card-header{
     background-color:#fafafa !important;
     justify-content: center;

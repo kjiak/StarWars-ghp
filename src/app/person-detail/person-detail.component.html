@@ -1,4 +1,3 @@
-<!-- <mat-card class="sample-card" *ngFor="let person of persondetail"> -->
 <mat-card class="sample-card" *ngIf="person && homeworld && species">
     <mat-card-header>
     <img mat-card-image src="{{person.imageURL}}" alt="Photo of a Character">  
@@ -6,7 +5,7 @@
     </mat-card-header>
     <mat-divider></mat-divider>
     <mat-card-content>
-    <mat-card-content>
+    <mat-card-content class="small-card">
     {{person.name}} <br>
      Birth Year: {{person.birth_year}} <br>
      Species: {{species}} <br>
@@ -28,4 +27,4 @@
     </mat-card-actions>
   </mat-card-content>
   </mat-card-content>
-  </mat-card>
+</mat-card>

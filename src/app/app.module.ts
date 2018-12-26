@@ -15,6 +15,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { PersonDetailComponent } from './person-detail/person-detail.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { AppRoutingModule } from './app-routing.module';
+import { PeopleComponent } from './people/people.component';
 
 
 
@@ -22,6 +24,7 @@ import { environment } from '../environments/environment';
   declarations: [
     AppComponent,
     PersonDetailComponent,
+    PeopleComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +38,7 @@ import { environment } from '../environments/environment';
     MatDividerModule,
     MatInputModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

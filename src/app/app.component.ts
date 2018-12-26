@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'StarWars PWA';
 
-  constructor() {}
+  constructor(private location: Location) {}
 
   ngOnInit() {}
+
+   goBack(): void {
+    this.location.back();
+  }
 }
