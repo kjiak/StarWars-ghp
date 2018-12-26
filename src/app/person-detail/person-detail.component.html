@@ -1,4 +1,4 @@
-<mat-card class="sample-card" *ngIf="person && homeworld && species">
+<mat-card class="sample-card" *ngIf="person">
     <mat-card-header>
     <img mat-card-image src="{{person.imageURL}}" alt="Photo of a Character">  
     <!-- <mat-card-title></mat-card-title> -->
@@ -8,13 +8,15 @@
     <mat-card-content class="small-card">
     {{person.name}} <br>
      Birth Year: {{person.birth_year}} <br>
-     Species: {{species}} <br>
+     <ng-container *ngFor="let species of person.species">
+    Species: {{species}} <br>
+     </ng-container>
      Height: {{person.height}} <br>
      Mass: {{person.mass}} <br>
      Gender: {{person.gender}} <br>
      Hair Color: {{person.hair_color}} <br>
      Skin Color: {{person.skin_color}} <br>
-     Homeworld: {{homeworld}} <br>
+     Homeworld: {{person.homeworld}} <br>
     </mat-card-content> 
     <mat-divider></mat-divider>
     <mat-card-content>
