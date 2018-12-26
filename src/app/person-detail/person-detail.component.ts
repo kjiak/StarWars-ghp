@@ -23,8 +23,8 @@ export class PersonDetailComponent implements OnInit {
     // this.apiService.getPeople().then(data => this.persondetail = data);
 
 
-    // solo
-    this.apiService.getPerson(1).then(data => { this.person = data; console.log(this.person);
+    // solo if?
+    this.apiService.getPerson(5).then(data => { this.person = data; console.log(this.person);
     this.apiService.getPlanetname(this.person.homeworld).then(res => {this.homeworld = res; console.log(this.homeworld); });
     this.apiService.getSpeciesname(this.person.species).then(res => {this.species = res; console.log(this.species); });
     });
