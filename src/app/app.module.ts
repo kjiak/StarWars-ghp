@@ -17,6 +17,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { PeopleComponent } from './people/people.component';
+import { CategoryComponent } from './category/category.component';
 
 
 
@@ -25,6 +26,7 @@ import { PeopleComponent } from './people/people.component';
     AppComponent,
     PersonDetailComponent,
     PeopleComponent,
+    CategoryComponent,
   ],
   imports: [
     BrowserModule,

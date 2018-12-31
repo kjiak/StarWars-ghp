@@ -5,15 +5,7 @@
   }
   
   .small-card {
-    border-bottom: solid;
-    border-bottom-color: rgb(200, 200, 200)
-  }
-
-  .smaller-card {
-    background-color: rgb(200, 200, 200);
-    color: red;
-    text-align: center;
-    padding:10px !important;
+    border: solid;
   }
   
   .mat-card-header{
@@ -40,6 +32,5 @@
     }
     
     .mat-card-content{
-      padding:10px !important;
+      padding:20px !important;
     }
-   

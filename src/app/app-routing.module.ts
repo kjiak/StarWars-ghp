@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PersonDetailComponent } from './person-detail/person-detail.component';
 import { PeopleComponent } from './people/people.component';
+import { CategoryComponent } from './category/category.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/people', pathMatch: 'full' },
-  { path: 'people', component: PeopleComponent },
-  { path: 'people/:id', component: PersonDetailComponent },
+  { path: '', redirectTo: '/category', pathMatch: 'full' },
+  { path: 'category', component: CategoryComponent },
+  { path: 'characters', component: PeopleComponent },
+  { path: 'characters/:id', component: PersonDetailComponent },
 ];
 
 @NgModule({

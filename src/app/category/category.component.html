@@ -1,0 +1,10 @@
+<mat-card class="sample-card" *ngFor="let category of categories; let i = index">
+  <mat-card-content>
+      <mat-card-content class="small-card">
+    <a routerLink="/{{categoriesl[i]}}">
+  {{category}} <br>
+    </a>
+    </mat-card-content>
+  </mat-card-content> 
+</mat-card>
+
