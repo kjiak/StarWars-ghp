@@ -33,5 +33,6 @@ export class PersonDetailComponent implements OnInit {
       console.log(this.person.species[0]); });
     }
     });
+
   }
 }
