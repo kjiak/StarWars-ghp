@@ -13,6 +13,7 @@ export class ApiService {
   private speciesURL = 'https://swapi.co/api/species/';
   constructor(private  httpClient:  HttpClient) {}
 
+  // Characters
   getPeople(): any {
     const allpeople = [];
     for (let i = 1; i < 89; i++) {
@@ -47,5 +48,7 @@ export class ApiService {
     .then(response => response['name'])
     .catch(err => console.log(err));
     }
+
+    // Planets
 
 }

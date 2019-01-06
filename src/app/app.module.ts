@@ -18,6 +18,16 @@ import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { PeopleComponent } from './people/people.component';
 import { CategoryComponent } from './category/category.component';
+import { FilmsComponent } from './films/films.component';
+import { FilmDetailComponent } from './film-detail/film-detail.component';
+import { SpeciesComponent } from './species/species.component';
+import { SpeciesDetailComponent } from './species-detail/species-detail.component';
+import { StarshipsComponent } from './starships/starships.component';
+import { StarshipDetailComponent } from './starship-detail/starship-detail.component';
+import { VehiclesComponent } from './vehicles/vehicles.component';
+import { VehicleDetailComponent } from './vehicle-detail/vehicle-detail.component';
+import { PlanetsComponent } from './planets/planets.component';
+import { PlanetDetailComponent } from './planet-detail/planet-detail.component';
 
 
 
@@ -27,6 +37,16 @@ import { CategoryComponent } from './category/category.component';
     PersonDetailComponent,
     PeopleComponent,
     CategoryComponent,
+    FilmsComponent,
+    FilmDetailComponent,
+    SpeciesComponent,
+    SpeciesDetailComponent,
+    StarshipsComponent,
+    StarshipDetailComponent,
+    VehiclesComponent,
+    VehicleDetailComponent,
+    PlanetsComponent,
+    PlanetDetailComponent,
   ],
   imports: [
     BrowserModule,

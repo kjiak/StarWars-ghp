@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './person-detail.component.html',
   styleUrls: ['./person-detail.component.css']
 })
-export class PersonDetailComponent implements OnInit {
+export class PlanetDetailComponent implements OnInit {
 
   // inside the controller, you call the service(eg this.species = species[0])
   title = 'StarWars';
