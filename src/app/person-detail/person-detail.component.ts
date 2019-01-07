@@ -11,7 +11,6 @@ import { ActivatedRoute } from '@angular/router';
 export class PersonDetailComponent implements OnInit {
 
   // inside the controller, you call the service(eg this.species = species[0])
-  title = 'StarWars';
   person: Person;
 
   constructor(
@@ -22,7 +21,7 @@ export class PersonDetailComponent implements OnInit {
 
   ngOnInit() {
     const id = +this.route.snapshot.paramMap.get('id');
-    // solo if?
+
     this.apiService.getPerson(id).then(data => { this.person = data; console.log(this.person);
     if (this.person.homeworld !== 'unknown') {
     this.apiService.getPlanetname(this.person.homeworld).then(res => {this.person.homeworld = res;

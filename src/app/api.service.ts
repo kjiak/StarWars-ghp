@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Person } from './classes';
+import { Person, Planet } from './classes';
 
 @Injectable({
   providedIn: 'root'
@@ -77,5 +77,25 @@ export class ApiService {
     }
 
     // Planets
+    // using promise all method to preserve calling order
+  getPlanets(): any {
+    const allplanets = [];
+    for (let i = 1; i < 62; i++) {
+    const p = this.httpClient.get(this.planetURL + i + '/')
+    .toPromise()
+    .then(response => Planet.parse(response))
+    .catch(err => console.log(err));
+    allplanets.push(p);
+    }
+    console.log(allplanets);
+    return Promise.all(allplanets);
+  }
+
+  getPlanet(planetid): any {
+    return this.httpClient.get(this.planetURL + planetid + '/')
+    .toPromise()
+    .then(response => Planet.parse(response))
+    .catch(err => console.log(err));
+    }
 
 }

@@ -111,11 +111,11 @@ export class Planet {
     imageURL: string;
 
     static parse(data) {
-        const person = Object.assign(new Person(), data);
-        person.getId();
-        person.getImageUrl();
-        person.getResidents();
-        return person;
+        const planet = Object.assign(new Planet(), data);
+        planet.getId();
+        planet.getImageUrl();
+        planet.getResidents();
+        return planet;
       }
 
     getResidents() {

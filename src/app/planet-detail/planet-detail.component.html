@@ -1,3 +1,45 @@
-<p>
-  planet-detail works!
-</p>
+<mat-card class="sample-card" *ngIf="planet">
+  <mat-card-header>
+  <img mat-card-image src="{{planet.imageURL}}" alt="Photo of a Planet">  
+  <!-- <mat-card-title></mat-card-title> -->
+  </mat-card-header>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+  <mat-card-content class="small-card">
+  {{planet.name}} <br>
+   <!-- Birth Year: {{person.birth_year}} <br>
+   Species: 
+   <ng-container *ngFor="let species of person.species; let isLast=last">
+  {{species}}{{isLast ? '' : ', '}}
+   </ng-container><br>
+   Height: {{person.height}} <br>
+   Mass: {{person.mass}} <br>
+   Gender: {{person.gender}} <br>
+   Hair Color: {{person.hair_color}} <br>
+   Skin Color: {{person.skin_color}} <br>
+   Homeworld: {{person.homeworld}} <br>
+   Films: 
+  <ng-container *ngFor="let films of person.films; let isLast=last">
+      {{films}}{{isLast ? '' : ', '}}
+  </ng-container><br>
+  Vehicles: 
+  <ng-container *ngFor="let vehicles of person.vehicles; let isLast=last">
+      {{vehicles}}{{isLast ? '' : ', '}}
+  </ng-container><br>
+  Starships: 
+  <ng-container *ngFor="let starships of person.starships; let isLast=last">
+      {{starships}}{{isLast ? '' : ', '}}
+  </ng-container><br> -->
+  </mat-card-content> 
+  <mat-divider></mat-divider>
+  <mat-card-content>
+  <mat-form-field>
+  <input matInput placeholder="Comments">
+  </mat-form-field>
+  <mat-card-actions>
+      <button mat-button><mat-icon>share</mat-icon>Share</button>
+      <!-- <a  mat-raised-button  href="{{person.url}}"  color="primary">More</a> -->
+  </mat-card-actions>
+</mat-card-content>
+</mat-card-content>
+</mat-card>

@@ -1,0 +1,45 @@
+.sample-card {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .small-card {
+    border-bottom: solid;
+    border-bottom-color: rgb(200, 200, 200)
+  }
+
+  .smaller-card {
+    background-color: rgb(200, 200, 200);
+    color: red;
+    text-align: center;
+    padding:10px !important;
+  }
+  
+  .mat-card-header{
+      background-color:#fafafa !important;
+      justify-content: center;
+      padding: 10px !important;
+    } 
+    /* .mat-card-title{
+      font-size: 1.5rem;
+      margin-left: 130%;
+    } */
+  
+    .mat-card img{
+      object-fit: cover;
+      width: 80%; 
+      height: 80%; 
+      max-width: 300px;
+      max-height: 300px;
+      padding: 0px !important;
+    } 
+  
+    .mat-card{
+      padding:0 !important;
+    }
+    
+    .mat-card-content{
+      padding:10px !important;
+    }
+   
