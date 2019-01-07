@@ -19,6 +19,7 @@ export class PlanetDetailComponent implements OnInit {
 
   ngOnInit() {
     const id = +this.route.snapshot.paramMap.get('id');
+    console.log(id);
     this.apiService.getPlanet(id).then(data => { this.planet = data; console.log(this.planet);
 
     if (this.planet.films[0] !== 'unknown') {

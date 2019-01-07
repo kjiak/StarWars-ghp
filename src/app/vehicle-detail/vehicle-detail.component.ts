@@ -19,7 +19,8 @@ export class VehicleDetailComponent implements OnInit {
 
   ngOnInit() {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.apiService.getStarship(id).then(data => { this.vehicle = data; console.log(this.vehicle);
+    console.log(id);
+    this.apiService.getVehicle(id).then(data => { this.vehicle = data; console.log(this.vehicle);
 
     if (this.vehicle.films[0] !== 'unknown') {
       for (let i = 0; i < this.vehicle.films.length; i++) {

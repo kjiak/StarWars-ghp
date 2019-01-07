@@ -271,9 +271,18 @@ export class Species {
     const species = Object.assign(new Species(), data);
     species.getId();
     species.getImageUrl();
+    species.getHomeWorldId();
     species.getPeopleId();
     species.getFilmsId();
     return species;
+  }
+
+  getHomeWorldId() {
+    if (this.homeworld) {
+      const temp = this.homeworld.match('([0-9]+)\/$');
+      // match from the back
+      this.homeworld = temp[1];
+    }
   }
 
   getPeopleId() {

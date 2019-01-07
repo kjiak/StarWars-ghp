@@ -1,7 +1,7 @@
 <mat-card class="sample-card">
   <h2 class="smaller-card">Vehicles</h2>
   <mat-card-content class="small-card" *ngFor="let vehicle of vehicles">
-    <a routerLink="/vehicles/{{vehicles.url}">
+    <a routerLink="/vehicles/{{vehicle.url}}">
   {{vehicle.url}}. {{vehicle.name}}
     </a>
 </mat-card-content> 

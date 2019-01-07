@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Person } from '../classes';
 import { ApiService } from '../api.service';
 import { ActivatedRoute } from '@angular/router';
+import { NgNavigatorShareService } from 'ng-navigator-share';
 
 @Component({
   selector: 'app-person-detail',
@@ -14,14 +15,28 @@ export class PersonDetailComponent implements OnInit {
   person: Person;
 
   constructor(
+    private ngNavigatorShareService: NgNavigatorShareService,
     private  apiService:  ApiService,
     private route: ActivatedRoute
     ) {
   }
 
+  shareAPI() {
+    try {
+      const sharedResponse = this.ngNavigatorShareService.share({
+        title: '`Web Articles and Tutorials',
+        text: 'Check out my blog — its worth looking.',
+        url: 'www.codershood.info'
+      });
+      console.log(sharedResponse);
+    } catch (error) {
+      console.log('You app is not shared, reason: ', error);
+    }
+  }
+
   ngOnInit() {
     const id = +this.route.snapshot.paramMap.get('id');
-
+    console.log(id);
     this.apiService.getPerson(id).then(data => { this.person = data; console.log(this.person);
 
     if (this.person.homeworld !== 'unknown') {
