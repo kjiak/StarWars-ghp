@@ -98,4 +98,11 @@ export class ApiService {
     .catch(err => console.log(err));
     }
 
+  getCharactersname(personid): any {
+      return this.httpClient.get(this.peopleURL + personid + '/')
+      .toPromise()
+      .then(response => response['name'])
+      .catch(err => console.log(err));
+      }
+
 }

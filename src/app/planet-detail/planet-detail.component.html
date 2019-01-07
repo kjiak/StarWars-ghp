@@ -7,30 +7,22 @@
   <mat-card-content>
   <mat-card-content class="small-card">
   {{planet.name}} <br>
-  
-   <!-- Birth Year: {{person.birth_year}} <br>
-   Species: 
-   <ng-container *ngFor="let species of person.species; let isLast=last">
-  {{species}}{{isLast ? '' : ', '}}
+  Rotation Period: {{planet.rotation_period}} <br>
+  Orbital Period: {{planet.orbital_period}} <br>
+  Diameter: {{planet.diameter}} <br>
+  Climate: {{planet.climate}} <br>
+  Gravity: {{planet.gravity}} <br>
+  Terrain: {{planet.terrain}} <br>
+  Surface Water: {{planet.surface_water}} <br>
+  Population: {{planet.population}} <br>
+    Residents: 
+   <ng-container *ngFor="let residents of planet.residents; let isLast=last">
+  {{residents}}{{isLast ? '' : ', '}}
    </ng-container><br>
-   Height: {{person.height}} <br>
-   Mass: {{person.mass}} <br>
-   Gender: {{person.gender}} <br>
-   Hair Color: {{person.hair_color}} <br>
-   Skin Color: {{person.skin_color}} <br>
-   Homeworld: {{person.homeworld}} <br>
    Films: 
-  <ng-container *ngFor="let films of person.films; let isLast=last">
-      {{films}}{{isLast ? '' : ', '}}
-  </ng-container><br>
-  Vehicles: 
-  <ng-container *ngFor="let vehicles of person.vehicles; let isLast=last">
-      {{vehicles}}{{isLast ? '' : ', '}}
-  </ng-container><br>
-  Starships: 
-  <ng-container *ngFor="let starships of person.starships; let isLast=last">
-      {{starships}}{{isLast ? '' : ', '}}
-  </ng-container><br> -->
+   <ng-container *ngFor="let films of planet.films; let isLast=last">
+  {{films}}{{isLast ? '' : ', '}}
+   </ng-container><br>
   </mat-card-content> 
   <mat-divider></mat-divider>
   <mat-card-content>

@@ -114,11 +114,12 @@ export class Planet {
         const planet = Object.assign(new Planet(), data);
         planet.getId();
         planet.getImageUrl();
-        planet.getResidents();
+        planet.getResidentsId();
+        planet.getFilmsId();
         return planet;
       }
 
-    getResidents() {
+    getResidentsId() {
       if (!this.residents.length) {
         // force empty array to show as 'unknown'
         this.residents.push('unknown');
@@ -126,6 +127,17 @@ export class Planet {
         // array of string instead of string
         const temp = this.residents.map(x => x.match('([0-9]+)\/$'));
         this.residents = temp.map(x => x[1]);
+      }
+    }
+
+    getFilmsId() {
+      if (!this.films.length) {
+        // force empty array to show as 'unknown'
+        this.films.push('unknown');
+      } else {
+        // array of string instead of string
+        const temp = this.films.map(x => x.match('([0-9]+)\/$'));
+        this.films = temp.map(x => x[1]);
       }
     }
 

@@ -23,6 +23,7 @@ export class PersonDetailComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('id');
 
     this.apiService.getPerson(id).then(data => { this.person = data; console.log(this.person);
+
     if (this.person.homeworld !== 'unknown') {
     this.apiService.getPlanetname(this.person.homeworld).then(res => {this.person.homeworld = res;
       console.log(this.person.homeworld); });
