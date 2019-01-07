@@ -1,3 +1,8 @@
-<p>
-  species works!
-</p>
+<mat-card class="sample-card">
+  <h2 class="smaller-card">Species</h2>
+  <mat-card-content class="small-card" *ngFor="let species of specieslist">
+    <a routerLink="/species/{{species.name}}">
+  {{species.url}}. {{species.name}}
+    </a>
+</mat-card-content> 
+</mat-card>

@@ -1,3 +1,8 @@
-<p>
-  films works!
-</p>
+<mat-card class="sample-card">
+  <h2 class="smaller-card">Films</h2>
+  <mat-card-content class="small-card" *ngFor="let film of films">
+    <a routerLink="/films/{{films.title}}">
+  {{film.url}}. {{film.title}}
+    </a>
+</mat-card-content> 
+</mat-card>

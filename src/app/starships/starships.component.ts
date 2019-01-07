@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Starship } from '../classes';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-starships',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StarshipsComponent implements OnInit {
 
-  constructor() { }
+  starships: Starship[];
+
+  constructor(private  apiService:  ApiService) { }
 
   ngOnInit() {
+    this.apiService.getStarships().then(data => { this.starships = data; console.log(this.starships); });
   }
 
 }

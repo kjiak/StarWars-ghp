@@ -1,17 +1,18 @@
 <mat-card class="sample-card" *ngIf="person">
     <mat-card-header>
-    <img mat-card-image src="{{person.imageURL}}" alt="Photo of a Character">  
+    <img mat-card-image src="{{person.imageURL}}" onerror="this.src='https://starwars-visualguide.com/assets/img/big-placeholder.jpg'" alt="Photo of a Character">  
     <!-- <mat-card-title></mat-card-title> -->
     </mat-card-header>
     <mat-divider></mat-divider>
     <mat-card-content>
     <mat-card-content class="small-card">
-    {{person.name}} <br>
+    <h2>{{person.name}}</h2>
      Birth Year: {{person.birth_year}} <br>
      Species: 
      <ng-container *ngFor="let species of person.species; let isLast=last">
     {{species}}{{isLast ? '' : ', '}}
      </ng-container><br>
+     Eye Color: {{person.eye_color}} <br>
      Height: {{person.height}} <br>
      Mass: {{person.mass}} <br>
      Gender: {{person.gender}} <br>

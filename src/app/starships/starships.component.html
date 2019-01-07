@@ -1,3 +1,8 @@
-<p>
-  starships works!
-</p>
+<mat-card class="sample-card">
+  <h2 class="smaller-card">Starships</h2>
+  <mat-card-content class="small-card" *ngFor="let starship of starships">
+    <a routerLink="/starships/{{starship.title}}">
+  {{starship.url}}. {{starship.title}}
+    </a>
+</mat-card-content> 
+</mat-card>

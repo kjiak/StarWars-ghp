@@ -1,12 +1,12 @@
 <mat-card class="sample-card" *ngIf="planet">
   <mat-card-header>
-  <img mat-card-image src="{{planet.imageURL}}" alt="Photo of a Planet">  
+  <img mat-card-image src="{{planet.imageURL}}" onerror="this.src='https://starwars-visualguide.com/assets/img/big-placeholder.jpg'" alt="Photo of a Planet">  
   <!-- <mat-card-title></mat-card-title> -->
   </mat-card-header>
   <mat-divider></mat-divider>
   <mat-card-content>
   <mat-card-content class="small-card">
-  {{planet.name}} <br>
+  <h2>{{planet.name}}</h2>
   Rotation Period: {{planet.rotation_period}} <br>
   Orbital Period: {{planet.orbital_period}} <br>
   Diameter: {{planet.diameter}} <br>
