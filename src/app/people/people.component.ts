@@ -14,7 +14,6 @@ export class PeopleComponent implements OnInit {
   constructor(private  apiService:  ApiService) { }
 
   ngOnInit() {
-     this.apiService.getPeople().then(data => this.people = data);
+    this.apiService.getPeople().then(data => { this.people = data; console.log(this.people); });
   }
-
 }

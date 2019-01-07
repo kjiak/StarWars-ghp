@@ -23,6 +23,9 @@ export class Person {
         person.getImageUrl();
         person.getHomeWorldId();
         person.getSpeciesId();
+        person.getFilmsId();
+        person.getVehiclesId();
+        person.getStarshipsId();
         return person;
       }
 
@@ -42,6 +45,39 @@ export class Person {
         // array of string instead of string
         const temp = this.species.map(x => x.match('([0-9]+)\/$'));
         this.species = temp.map(x => x[1]);
+      }
+    }
+
+    getStarshipsId() {
+      if (!this.starships.length) {
+        // force empty array to show as 'unknown'
+        this.starships.push('unknown');
+      } else {
+        // array of string instead of string
+        const temp = this.starships.map(x => x.match('([0-9]+)\/$'));
+        this.starships = temp.map(x => x[1]);
+      }
+    }
+
+    getVehiclesId() {
+      if (!this.vehicles.length) {
+        // force empty array to show as 'unknown'
+        this.vehicles.push('unknown');
+      } else {
+        // array of string instead of string
+        const temp = this.vehicles.map(x => x.match('([0-9]+)\/$'));
+        this.vehicles = temp.map(x => x[1]);
+      }
+    }
+
+    getFilmsId() {
+      if (!this.films.length) {
+        // force empty array to show as 'unknown'
+        this.films.push('unknown');
+      } else {
+        // array of string instead of string
+        const temp = this.films.map(x => x.match('([0-9]+)\/$'));
+        this.films = temp.map(x => x[1]);
       }
     }
 
@@ -83,7 +119,6 @@ export class Planet {
       }
 
     getResidents() {
-
       if (!this.residents.length) {
         // force empty array to show as 'unknown'
         this.residents.push('unknown');

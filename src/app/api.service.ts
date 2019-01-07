@@ -11,9 +11,15 @@ export class ApiService {
   private peopleURL = 'https://swapi.co/api/people/';
   private planetURL = 'https://swapi.co/api/planets/';
   private speciesURL = 'https://swapi.co/api/species/';
+  private filmsURL = 'https://swapi.co/api/films/';
+  private vehiclesURL = 'https://swapi.co/api/vehicles/';
+  private starshipsURL = 'https://swapi.co/api/starships/';
+
   constructor(private  httpClient:  HttpClient) {}
 
   // Characters
+
+  // using promise all method to preserve calling order
   getPeople(): any {
     const allpeople = [];
     for (let i = 1; i < 89; i++) {
@@ -44,6 +50,27 @@ export class ApiService {
 
   getSpeciesname(speciesid): any {
     return this.httpClient.get(this.speciesURL + speciesid + '/')
+    .toPromise()
+    .then(response => response['name'])
+    .catch(err => console.log(err));
+    }
+
+  getFilmsname(filmsid): any {
+    return this.httpClient.get(this.filmsURL + filmsid + '/')
+    .toPromise()
+    .then(response => response['title'])
+    .catch(err => console.log(err));
+    }
+
+  getVehiclesname(vehiclesid): any {
+    return this.httpClient.get(this.vehiclesURL + vehiclesid + '/')
+    .toPromise()
+    .then(response => response['name'])
+    .catch(err => console.log(err));
+    }
+
+  getStarshipsname(starshipsid): any {
+    return this.httpClient.get(this.starshipsURL + starshipsid + '/')
     .toPromise()
     .then(response => response['name'])
     .catch(err => console.log(err));
