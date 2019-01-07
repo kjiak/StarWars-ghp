@@ -13,8 +13,8 @@ export class CategoryComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.categories = ['Characters', 'Films', 'Species', 'Starship', 'Vehicles', 'Planets'];
-    this.categoriesl = ['characters', 'films', 'species', 'starship', 'vehicles', 'planets'];
+    this.categories = ['Characters', 'Films', 'Species', 'Starships', 'Vehicles', 'Planets'];
+    this.categoriesl = ['characters', 'films', 'species', 'starships', 'vehicles', 'planets'];
   }
 
 

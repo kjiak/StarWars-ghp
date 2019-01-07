@@ -174,7 +174,7 @@ export class ApiService {
     // using promise all method to preserve calling order
     getSpeciesList(): any {
       const allspecies = [];
-      for (let i = 1; i < 62; i++) {
+      for (let i = 1; i < 38; i++) {
       const p = this.httpClient.get(this.speciesURL + i + '/')
       .toPromise()
       .then(response => Species.parse(response))

@@ -1,7 +1,7 @@
 <mat-card class="sample-card">
   <h2 class="smaller-card">Films</h2>
   <mat-card-content class="small-card" *ngFor="let film of films">
-    <a routerLink="/films/{{films.title}}">
+    <a routerLink="/films/{{films.url}}">
   {{film.url}}. {{film.title}}
     </a>
 </mat-card-content> 
