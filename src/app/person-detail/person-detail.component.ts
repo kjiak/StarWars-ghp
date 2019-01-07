@@ -13,25 +13,14 @@ export class PersonDetailComponent implements OnInit {
 
   // inside the controller, you call the service(eg this.species = species[0])
   person: Person;
+  private ngNavigatorShareService: NgNavigatorShareService;
 
   constructor(
-    private ngNavigatorShareService: NgNavigatorShareService,
+    ngNavigatorShareService: NgNavigatorShareService,
     private  apiService:  ApiService,
     private route: ActivatedRoute
     ) {
-  }
-
-  shareAPI() {
-    try {
-      const sharedResponse = this.ngNavigatorShareService.share({
-        title: '`Web Articles and Tutorials',
-        text: 'Check out my blog — its worth looking.',
-        url: 'www.codershood.info'
-      });
-      console.log(sharedResponse);
-    } catch (error) {
-      console.log('You app is not shared, reason: ', error);
-    }
+    this.ngNavigatorShareService = ngNavigatorShareService;
   }
 
   ngOnInit() {
@@ -68,5 +57,18 @@ export class PersonDetailComponent implements OnInit {
 
     });
 
+  }
+
+  shareAPI() {
+    this.ngNavigatorShareService.share({
+      title: 'My Awesome app',
+      text: 'Hey check out my Share button',
+      url: 'http://www.codershood.info/2018/06/17/how-to-use-web-share-api-in-your-angular-applications/'
+    }).then( (response) => {
+      console.log(response);
+    })
+    .catch( (error) => {
+      console.log(error);
+    });
   }
 }
