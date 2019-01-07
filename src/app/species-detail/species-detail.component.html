@@ -1,26 +1,27 @@
 <mat-card class="sample-card" *ngIf="species">
   <mat-card-header>
-  <img mat-card-image src="{{species.imageURL}}" onerror="this.src='https://starwars-visualguide.com/assets/img/big-placeholder.jpg'" alt="Photo of a Planet">  
+  <img mat-card-image src="{{species.imageURL}}" onerror="this.src='https://starwars-visualguide.com/assets/img/big-placeholder.jpg'" alt="Photo of a Species">  
   <!-- <mat-card-title></mat-card-title> -->
   </mat-card-header>
   <mat-divider></mat-divider>
   <mat-card-content>
   <mat-card-content class="small-card">
   <h2>{{species.name}}</h2>
-  Rotation Period: {{planet.rotation_period}} <br>
-  Orbital Period: {{planet.orbital_period}} <br>
-  Diameter: {{planet.diameter}} <br>
-  Climate: {{planet.climate}} <br>
-  Gravity: {{planet.gravity}} <br>
-  Terrain: {{planet.terrain}} <br>
-  Surface Water: {{planet.surface_water}} <br>
-  Population: {{planet.population}} <br>
-    Residents: 
-   <ng-container *ngFor="let residents of planet.residents; let isLast=last">
-  {{residents}}{{isLast ? '' : ', '}}
+  Classification: {{species.classification}} <br>
+  Designation: {{species.designation}} <br>
+  Average Height: {{species.average_height}} <br>
+  Average Lifespan: {{species.average_lifespan}} <br>
+  Eye Colors: {{species.eye_colors}} <br>
+  Hair Colors: {{species.hair_colors}} <br>
+  Skin Colors: {{species.skin_colors}} <br>
+  Language: {{species.language}} <br>
+  Homeworld: {{species.homeworld}} <br>
+  People: 
+   <ng-container *ngFor="let people of species.people; let isLast=last">
+  {{people}}{{isLast ? '' : ', '}}
    </ng-container><br>
-   Films: 
-   <ng-container *ngFor="let films of planet.films; let isLast=last">
+  Films: 
+   <ng-container *ngFor="let films of species.films; let isLast=last">
   {{films}}{{isLast ? '' : ', '}}
    </ng-container><br>
   </mat-card-content> 

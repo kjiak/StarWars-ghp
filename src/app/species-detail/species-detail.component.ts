@@ -19,19 +19,24 @@ export class SpeciesDetailComponent implements OnInit {
 
   ngOnInit() {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.apiService.getPlanet(id).then(data => { this.planet = data; console.log(this.planet);
+    this.apiService.getSpecies(id).then(data => { this.species = data; console.log(this.species);
+
+    if (this.species.homeworld !== 'unknown') {
+      this.apiService.getPlanetname(this.species.homeworld).then(res => {this.species.homeworld = res;
+        console.log(this.species.homeworld); });
+      }
 
     if (this.species.films[0] !== 'unknown') {
-      for (let i = 0; i < this.planet.films.length; i++) {
-      this.apiService.getFilmsname(this.planet.films[i]).then(res => {this.planet.films[i] = res;
-        console.log(this.planet.films[i]); });
+      for (let i = 0; i < this.species.films.length; i++) {
+      this.apiService.getSpeciesname(this.species.films[i]).then(res => {this.species.films[i] = res;
+        console.log(this.species.films[i]); });
       }
     }
 
-    if (this.planet.residents[0] !== 'unknown') {
-      for (let i = 0; i < this.planet.residents.length; i++) {
-      this.apiService.getCharactersname(this.planet.residents[i]).then(res => {this.planet.residents[i] = res;
-        console.log(this.planet.residents[i]); });
+    if (this.species.people[0] !== 'unknown') {
+      for (let i = 0; i < this.species.people.length; i++) {
+      this.apiService.getCharactersname(this.species.people[i]).then(res => {this.species.people[i] = res;
+        console.log(this.species.people[i]); });
       }
     }
 
