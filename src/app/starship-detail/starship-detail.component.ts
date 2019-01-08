@@ -59,10 +59,10 @@ export class StarshipDetailComponent implements OnInit {
       title: 'StarWars',
       text: 'Hey Check Out My App',
       url: 'https://kjiakai.github.io/StarWars-ghp' + this.route.snapshot['_routerState'].url
-    }).then( (response) => {
+    }).then((response) => {
       console.log(response);
     })
-    .catch( (error) => {
+    .catch((error) => {
       console.log(error);
     });
   }
