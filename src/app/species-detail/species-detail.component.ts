@@ -61,16 +61,15 @@ export class SpeciesDetailComponent implements OnInit {
   }
 
   shareAPI() {
-    this.ngNavigatorShareService.share({
-      title: 'StarWars',
-      text: 'Hey Check Out My App',
-      url: 'https://kjiakai.github.io/StarWars-ghp' + this.route.snapshot['_routerState'].url
-    }).then((response) => {
-      console.log(response);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+    if (this.ngNavigatorShareService.share) {
+      this.ngNavigatorShareService.share({
+          title: 'StarWars',
+          text: 'Hey Check Out My App',
+          url: 'https://kjiakai.github.io/StarWars-ghp/',
+      })
+      .then(() => console.log('Successful share'))
+      .catch((error) => console.log('Error sharing', error));
+    }
   }
 
 
