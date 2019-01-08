@@ -30,7 +30,9 @@ export class Person {
       }
 
     getHomeWorldId() {
-        if (this.homeworld) {
+      if (this.homeworld === null) {
+        this.homeworld = 'unknown';
+      } else {
           const temp = this.homeworld.match('([0-9]+)\/$');
           // match from the back
           this.homeworld = temp[1];
@@ -278,7 +280,9 @@ export class Species {
   }
 
   getHomeWorldId() {
-    if (this.homeworld) {
+    if (this.homeworld === null) {
+      this.homeworld = 'unknown';
+    } else {
       const temp = this.homeworld.match('([0-9]+)\/$');
       // match from the back
       this.homeworld = temp[1];
