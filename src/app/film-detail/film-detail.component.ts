@@ -3,6 +3,7 @@ import { Film } from '../classes';
 import { ApiService } from '../api.service';
 import { ActivatedRoute } from '@angular/router';
 import { NgNavigatorShareService } from 'ng-navigator-share';
+import { LocalStorageService } from 'ngx-webstorage';
 
 @Component({
   selector: 'app-film-detail',
@@ -13,8 +14,10 @@ export class FilmDetailComponent implements OnInit {
 
   film: Film;
   private ngNavigatorShareService: NgNavigatorShareService;
+  comments: string;
 
   constructor(
+    private storage: LocalStorageService,
     ngNavigatorShareService: NgNavigatorShareService,
     private  apiService:  ApiService,
     private route: ActivatedRoute
@@ -54,16 +57,22 @@ export class FilmDetailComponent implements OnInit {
       }
     }
 
-
+    this.comments = this.storage.retrieve(this.route.snapshot['_routerState'].url);
+    console.log(this.comments);
   });
 
 }
 
+saveValue() {
+  this.storage.store(this.route.snapshot['_routerState'].url, this.comments);
+  console.log(this.comments);
+}
+
 shareAPI() {
   this.ngNavigatorShareService.share({
-    title: 'My Awesome app',
-    text: 'Hey check out my Share button',
-    url: 'http://www.codershood.info/2018/06/17/how-to-use-web-share-api-in-your-angular-applications/'
+    title: 'StarWars',
+    text: 'Hey Check Out My App',
+    url: 'https://kjiakai.github.io/StarWars-ghp' + this.route.snapshot['_routerState'].url
   }).then( (response) => {
     console.log(response);
   })

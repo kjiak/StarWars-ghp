@@ -27,12 +27,10 @@
   <mat-divider></mat-divider>
   <mat-card-content>
   <mat-form-field>
-  <input matInput placeholder="Comments">
+  <input matInput [(ngModel)]="comments" placeholder="Comments">
   </mat-form-field>
-  <mat-card-actions>
-      <button (click)="shareAPI()" mat-button><mat-icon>share</mat-icon>Share</button>
-      <!-- <a  mat-raised-button  href="{{person.url}}"  color="primary">More</a> -->
-  </mat-card-actions>
+  <button (click)="saveValue()" mat-button>Save</button>
+  <button (click)="shareAPI()" mat-button><mat-icon>share</mat-icon>Share</button>
 </mat-card-content>
 </mat-card-content>
 </mat-card>

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { NgxWebstorageModule } from 'ngx-webstorage';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -28,6 +29,7 @@ import { VehiclesComponent } from './vehicles/vehicles.component';
 import { VehicleDetailComponent } from './vehicle-detail/vehicle-detail.component';
 import { PlanetsComponent } from './planets/planets.component';
 import { PlanetDetailComponent } from './planet-detail/planet-detail.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -61,6 +63,8 @@ import { PlanetDetailComponent } from './planet-detail/planet-detail.component';
     MatInputModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     AppRoutingModule,
+    NgxWebstorageModule.forRoot(),
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
