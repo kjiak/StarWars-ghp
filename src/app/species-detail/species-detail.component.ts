@@ -65,7 +65,7 @@ export class SpeciesDetailComponent implements OnInit {
       this.ngNavigatorShareService.share({
           title: 'StarWars',
           text: 'Hey Check Out My App',
-          url: 'https://kjiakai.github.io/StarWars-ghp/' + this.route.snapshot['_routerState'].url
+          url: 'https://kjiakai.github.io/StarWars-ghp' + this.route.snapshot['_routerState'].url
       })
       .then(() => console.log('Successful share'))
       .catch((error) => console.log('Error sharing', error));
