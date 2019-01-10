@@ -16,6 +16,7 @@ import { FilmDetailComponent } from './film-detail/film-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/category', pathMatch: 'full' },
+  {path: '/*path', redirectTo: '/category'},
   { path: 'category', component: CategoryComponent },
   { path: 'characters', component: PeopleComponent },
   { path: 'planets', component: PlanetsComponent },
